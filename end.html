@@ -9,25 +9,27 @@
         <link rel="stylesheet" href="assets/menu.css">
         <link rel="stylesheet" href="assets/quiz.css">
         <link rel="stylesheet" href="assets/end.css">
-        <link rel="stylesheet" href="assets/leaderboard.css">
+
     </head>
     <body>
         <!-- This will format and hold everything inside of it -->
         <div class="container">
             <div class="screen-center">
-                <div class="header-box prevent-select">
-                    <h1 class="typewriter">//Leaderboard<span class="blink">_</span></h1>
-                    <ul id="leaderboard" class="leaderboard-box">
-                        <li id="name-input" class="form-font-size">'name'</li>
-                    </ul>
+                <div class="quiz-box prevent-select">
+                    <p class="typewriter final-score">
+                        //Your final score is:<span id="final-score" class="blink">'score'</span>
+                    </p>
+                    <!-- <h1>¯\_(ツ)_/¯</h1> -->
+                    <form>
+                        <p class="form-font-size">Enter your name to save your high score:</p>
+                        <input id="name-input" type="text" placeholder="'Danny DeVito'">
+                        <button id="submit-button"  type="submit" class="pulse">submit</button>
+                    </form>
                 </div>
-                <div class="menu-options screen-center">
+                <div class="menu-options">
                     <a href="menu.html" id="start-button" class="pulse">
                         Play Again</a>
                     <a href="leaderboard.html" id="leaderboard-button" class="pulse">
                         Leaderboard</a>
-                    <button id="clear-scores-button" class="clear-button pulse-quit">
-                        Clear Scores</button>
                 </div>
-                
-    </body>
+            </div>
