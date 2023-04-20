@@ -11,37 +11,60 @@ font-family: 'Source Code Pro', monospace; */
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  margin: 0 auto;
 }
 
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1rem 1rem;
-    height: 100vh;
-    width: 100vw;
-    background-color: var(--bgc);
-}
-.card-header {
-    display: block;
-    text-align: center;
-    width: 100%;
-    line-height: 2;
-    height: auto
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1rem;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bgc);
 }
 
-.screen-center {
-  display: flex;
-  flex-direction: column;
+header {
+  background-color: var(--bgc);
+  margin: 0 auto;
+}
+
+.card-header {
+  display: block;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  line-height: 2;
+}
+
+.header-box {
+  border: #12FF06 solid .25rem;
+  color: var(--game-text-color);
+  background-color: var(--bgc);
+  border-style: ridge;
+  margin: 0 0 0 0;
+  padding: .5rem .5rem;
+  
 }
 
 h1 {
-    font-family: 'Press Start 2P', cursive;
-    color: var(--game-text-color);
-    background-color: grey;
-    border: #12FF06 solid .25rem;
-    background-color: var(--bgc);
-    border-style: ridge;
-    margin: 0 0 .5rem 0;
+  font-family: 'Press Start 2P', cursive;
+  color: var(--game-text-color);
+  background-color: var(--bgc);
+}
+
+.typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  transition: all 0.3s ease-in-out;
+  animation: typing 3.5s steps(30, end), .5s step-end;
+}
+
+@keyframes typing {
+  from {width: 0}
+  to {width: 100%}
 }
 
 menu {
@@ -57,8 +80,8 @@ a {
   text-decoration: none;
   border: var(--game-text-color) solid .25rem;
   border-style: ridge;
-  margin: .5rem 0 .5rem 0;
-  padding: .5rem;
+  margin: 1rem 0 0 0;
+  padding: .5rem .5rem;
 
 }
 
@@ -78,7 +101,7 @@ a {
 }
 
 .pulse:hover {
-  animation: pulse 1.5s infinite;
+  animation: pulse 1s infinite;
 }
 
 @keyframes pulse {
@@ -87,7 +110,8 @@ a {
   }
   50% {
     transform: scale(1);
-    box-shadow: 0 0 0 .25rem var(--game-text-color, 0);
+    box-shadow: 0 0 0 .25rem white;
+    color: white;
   }
   100% {
     transform: scale(1);
