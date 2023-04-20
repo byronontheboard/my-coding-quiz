@@ -9,11 +9,13 @@ font-family: 'Source Code Pro', monospace; */
 
 * {
   box-sizing: border-box;
-  margin: 0;
   padding: 0;
   margin: 0 auto;
+  font-family: 'Press Start 2P', cursive;
 }
 
+/* aligns the contents directly in the middle of the page */
+/* makes the background color black(--bgc) */
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -25,81 +27,85 @@ font-family: 'Source Code Pro', monospace; */
   background-color: var(--bgc);
 }
 
-header {
-  background-color: var(--bgc);
-  margin: 0 auto;
-}
-
-.card-header {
+/* keeps the <div> with the .header-box class and the menu containing the <a> elements together */
+/* aligns the text to the center */
+.screen-center {
   display: block;
   text-align: center;
-  width: 100%;
-  height: auto;
   line-height: 2;
 }
 
+/* this contains the header '//What is Coding?_' */
 .header-box {
-  border: #12FF06 solid .25rem;
   color: var(--game-text-color);
   background-color: var(--bgc);
+  border: var(--game-text-color) solid .25rem;
   border-style: ridge;
+  border-radius: .5rem;
   margin: 0 0 0 0;
   padding: .5rem .5rem;
-  
+  width: 100%;
+  height: auto;
+}
+
+/* just a style choice, I thought it would fit the theme to make the cursor a question mark */
+.header-box:hover {
+  cursor: help
+}
+
+/* stops the header-box from being selected/highlighted */
+.prevent-select {
+  user-select: none; 
+  -webkit-user-select: none; 
+  -ms-user-select: none; 
 }
 
 h1 {
-  font-family: 'Press Start 2P', cursive;
   color: var(--game-text-color);
   background-color: var(--bgc);
 }
 
+/* controls the typing animations parameters and hides the heading until the animation is complete */
 .typewriter {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  overflow: hidden; 
+  white-space: nowrap; 
+  margin: 0 auto; 
   transition: all 0.3s ease-in-out;
   animation: typing 3.5s steps(30, end), .5s step-end;
 }
 
+/* executes the typing animation for the header '//What is Coding?_ */
 @keyframes typing {
   from {width: 0}
   to {width: 100%}
 }
 
-menu {
+/* makes the <a> elements within stack as a column in the center */
+.menu-options {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 a {
-  font-family: 'Press Start 2P', cursive;
   color: var(--game-text-color);
   background-color: var(--bgc);
   text-decoration: none;
   border: var(--game-text-color) solid .25rem;
   border-style: ridge;
+  border-radius: .5rem;
   margin: 1rem 0 0 0;
   padding: .5rem .5rem;
-
+  
 }
 
-/* .grow-content {
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.grow-content:hover {
-  transform: scale();
-} */
-
+/* made this in order to show which button you are selecting */
 .pulse {
-  /* transition: auto; */
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
+/* while hovering, the button for 'Start Quiz' and 'Leaderboard' will highlight white, in a 'pulse' fashion */
 .pulse:hover {
   animation: pulse 1s infinite;
 }
@@ -119,8 +125,9 @@ a {
   }
 }
 
+/* makes the '_' in the header to blink in and out every 1.5s infinitely */
 .blink {
-  animation: blink 1s steps(1, end) infinite;
+  animation: blink 1.5s steps(1, end) infinite;
 }
 
 @keyframes blink {
@@ -135,6 +142,7 @@ a {
   }
 }
 
+/* adds mobile accessibility to fit the screen when resized */
 @media screen and (max-width: 768px) {
   .title-container, .navigation-container {
       display: flex;
