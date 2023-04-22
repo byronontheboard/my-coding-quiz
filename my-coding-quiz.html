@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>//What is Coding? | Quiz</title>
+    <link rel="stylesheet" href="assets/my-coding-quiz.css">
+</head>
+    <body>
+    <!-- Main container that holds every page(menu, quiz, summary, and leaderboard) -->
+        <div class="main-container">
+
+    <!-- Menu Page -->
+            <!-- This is the box that holds the menu options(header, 'Start Quiz' and 'Leaderboard' button) -->
+            <div id="menu-page">
+                <div class="page-container">
+                    <!-- This container holds and places a border around the header -->
+                    <header class="header-container prevent-select">
+                        <div class="h1-container typewriter">
+                            <h1>//What is Coding?</h1>
+                        </div>
+                        <div class="h1-container">
+                            <h1 class="margin-top">¯\_(ツ)_/¯</h1>
+                        </div>
+                    </header>
+                    <div class="text-container prevent-select">
+                        <p>Do you got what it takes to complete this quiz? Let's find out just how high of a score you can acheive in under 60 seconds! </p>
+                    </div>
+                    <div class="button-container">
+                        <button id="start-btn" class="pulse half-width">Start Quiz</button>
+                        <button id="leaderboard-btn" class="pulse half-width">Leaderboard</button>
+                    </div>
+                </div>
+            </div>
+
+    <!-- Quiz Page -->
+            <!-- This is the box that holds the quiz parameters(questions, choices, timer, and score), and the option to quit(with the 'Quit' button) -->
+            <div id="quiz-page" style="display: none;">
+                <div class="container border" >
+                    <!-- This container holds and places a border around the header -->
+                    <div class="container border">
+                        <header class="typewriter">
+                            <h1></h1>
+                        </header>
+                    </div>
+                </div>
+            </div>
+
+    <!-- Summary Page -->
+            <!-- This is the box that holds the wrap up of your quiz results(your score), with the option to input your name into the entry to submit your score to a 'Leaderboard'(saved to local storage once submitted) -->
+            <div id="summary-page" style="display: none;">
+                <div class="container border" >
+                    <!-- This container holds and places a border around the header -->
+                    <div class="container border">
+                        <header class="typewriter">
+                            <h1></h1>
+                        </header>
+                    </div>
+                </div>
+            </div>
+
+    <!-- Leaderboard Page -->
+            <!-- This is the box that holds the high scores of all the users who completed the quiz and submitted their name in the entry -->
+            <div id="leaderboard-page" style="display: none;">
+                <div class="container border" >
+                    <!-- This container holds and places a border around the header -->
+                    <div class="container border">
+                        <header class="typewriter">
+                            <h1></h1>
+                        </header>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

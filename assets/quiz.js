@@ -1,30 +1,3 @@
-var question = document.querySelector('#question');
-var choiceA = document.getElementById('#choice-1');
-var choiceB = document.getElementById('choice-2');
-var choiceC = document.getElementById('choice-3');
-var choiceD = document.getElementById('choice-4');
-var checkAnswer = document.getElementById('#answer-check');
-
-var startQuiz = document.querySelector('#start-button')
-
-var scoreText = document.querySelector('#score');
-var timeText = document.querySelector('#time-remaining');
-var leaderboards = document.querySelector('#leaderboard-button')
-var summary = document.getElementById('#summary')
-var finalScore = document.getElementById("final-score");
-
-var summary = document.getElementById("summary");
-var submitButton = document.getElementById("submit-button");
-var nameInput = document.getElementById("name-input");
-// var everything = document.getElementById("everything");
-
-var currentQuestion = {}
-var correctAnswer = {}
-var score = 0
-var questionCounter = 0
-var countdown = 100
-
-
 var questions = [
     {
       title: 'Commonly used data types DO NOT include:',
@@ -60,9 +33,45 @@ var questions = [
     },
 ];
 
+var quizPage = 'quiz.html'
+var leaderboardPage = 'leaderboard.html'
+var endSummaryPage = 'end.html'
+var menuPage = 'menu.html'
+
+
+var timer = document.getElementById('#timer');
+var timeLeft = document.getElementById('time-left');
+
+// might not need
+var startQuiz = document.querySelector('#start-button');
+
+var theQuestion = document.getElementById('#question');
+var choiceA = document.getElementById('#choice-1');
+var choiceB = document.getElementById('#choice-2');
+var choiceC = document.getElementById('#choice-3');
+var choiceD = document.getElementById('#choice-4');
+var checkAnswer = document.getElementById('#answer-check');
+
+var summary = document.getElementById("summary");
+var submitButton = document.getElementById("submit-button");
+var nameInput = document.getElementById("name-input");
+// var everything = document.getElementById("everything");
+
+var finalScore = document.getElementById("final-score");
+
+// might not need
+var playAgain = document.getElementById('#play-again-button')
+var clearScores = document.getElementById('#clear-scores-button')
+// might not need
+var leaderboards = document.querySelector('#leaderboard-button');
+
+
+// var scoreText = document.querySelector('#score');
+
+
+var correctAnswers = 0;
+var currentQuestion = 0;
+var scoreResult;
+var questionIndex= 0;
+
 startQuiz.addEventListener("click", quiz);
-
-function quiz(){
-    if()
-
-};
