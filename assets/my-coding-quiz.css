@@ -6,6 +6,8 @@ font-family: 'Source Code Pro', monospace; */
   --bgc: black;
   --game-text-color: #12FF06;
   --quiz-font: 'Press Start 2P', cursive;
+  --leaderboard-color: #FFFB5A;
+  --play-again-color: #2D44FD;
 }
 
 * {
@@ -13,62 +15,19 @@ font-family: 'Source Code Pro', monospace; */
     font-family: var(--quiz-font);
     color: var(--game-text-color);
     margin: 0 auto;
-    transition: all 0.1s ease-in-out;
+    /* transition: all 0.1s ease-in-out; */
 }
 
 body {
     font-size: 100%;
 }
 
-/* Properties to use for my HTML if not included in class already */
-.justify-content-center {
-    display: flex;
-    justify-content: center;
-}
-
-.align-content-center {
-    display: flex;
-    align-items: center;
-}
-
-.fw-wrap {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.fw-no-wrap {
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.fd-column {
-    display: flex;
-    flex-direction: column;
-}
-
-.fd-row {
-    display: flex;
-    flex-direction: row;
-}
-
-.margin-top {
-    margin-top: 1rem;
-}
-
-.border {
-    border: var(--game-text-color) solid .25rem;
-    border-style: ridge;
-    border-radius: .5rem;
-}
-
-.half-width {
-    width: 50%;
-}
 
 /* Main CSS that will be applied to all pages(menu, quiz, summary, leaderboard) and holds every single page */
 .main-container {
     /* border: red solid; */
     display: flex;
+    flex-direction: column;
     height: 100vh;
     justify-content: center;
     align-items: center;
@@ -85,7 +44,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 80vh;
-    width: 90vw;
+    width: 80vw;
+    min-width: 80vw;
     text-align: center;
 }
 
@@ -95,10 +55,12 @@ body {
     border-radius: .5rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 1rem;
     margin: .5rem;
-    
+    padding: .5rem .5rem;
+    width: 35rem;
 }
 
 /* This container just insures that the .typewriter animation doesn't continue outside of its bounds */
@@ -106,12 +68,37 @@ body {
     /* border: orange solid; */
     display: flex;
     text-align: center;
-    margin;
+    margin: .5rem .5rem;
+    width: fit-content;
+}
+
+/* This is in charge of making the <header> entry type out upon opening the page */
+.typewriter h1 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid var(--game-text-color); /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--game-text-color); }
 }
 
 h1 {
     font-size: 1.5em; 
 }
+
 
 .text-container {
     border: var(--game-text-color) solid .25rem;
@@ -119,10 +106,11 @@ h1 {
     border-style: ridge;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     width: 35rem;
     text-align: center;
+    margin: .5rem;
     padding: .5rem;
-    margin: .5rem
 }
 
 p {
@@ -130,7 +118,6 @@ p {
     display: flex;
     font-size: 1em;
     line-height: 2em;
-
 }
 
 .button-container {
@@ -138,7 +125,10 @@ p {
     border-radius: .5rem;
     border-style: ridge;
     display: flex;
+    justify-content: space-between;
     margin: .5rem;
+    padding: 0 .5rem;
+    width: 35rem;
 }
 
 button {
@@ -149,7 +139,8 @@ button {
     align-items: center;
     justify-content: center;
     padding: .5rem;
-    margin: 1rem;
+    margin: 1rem .5rem;
+    width: 20rem;
     font-size: 1.25em;
     line-height: 2em;
 }
@@ -161,83 +152,246 @@ button:hover {
 .pulse {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-  }
-  
-  /* while hovering, the button for 'Start Quiz' and 'Leaderboard' will highlight white, in a 'pulse' fashion */
-  .pulse:hover {
+}
+
+/* while hovering, the button for 'Start Quiz' and 'Leaderboard' will highlight white, in a 'pulse' fashion */
+.pulse:hover {
     animation: pulse 1s infinite;
-  }
-  
-  @keyframes pulse {
+}
+
+@keyframes pulse {
     0% {
-      transform: scale(1);
+        transform: scale(1);
     }
     50% {
-      transform: scale(1.025);
-      box-shadow: 0 0 0 .25rem white;
-      color: white;
+        transform: scale(1.025);
+        box-shadow: 0 0 0 .25rem white;
+        color: white;
     }
     100% {
-      transform: scale(1);
-      box-shadow: 0 0 0 0 var(--game-text-color, 0);
+        transform: scale(1);
+        box-shadow: 0 0 0 0 var(--game-text-color, 0);
+    }
+}
+.leaderboard-pulse {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* while hovering, the button for 'Start Quiz' and 'Leaderboard' will highlight white, in a 'pulse' fashion */
+.leaderboard-pulse:hover {
+    animation: leaderboard-pulse 1s infinite;
+}
+
+@keyframes leaderboard-pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.025);
+        box-shadow: 0 0 0 .25rem var(--leaderboard-color);
+        color: var(--leaderboard-color);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 var(--game-text-color, 0);
+    }
+}
+
+.quit-pulse {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* while hovering, the button for 'Start Quiz' and 'Leaderboard' will highlight white, in a 'pulse' fashion */
+.quit-pulse:hover {
+    animation: quit-pulse 1s infinite;
+}
+
+@keyframes quit-pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.025);
+        box-shadow: 0 0 0 .25rem red;
+        color: red;
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 var(--game-text-color, 0);
+    }
+}
+
+.play-again-pulse {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* while hovering, the button for 'Start Quiz' and 'Leaderboard' will highlight white, in a 'pulse' fashion */
+.play-again-pulse:hover {
+    animation: play-again-pulse 1s infinite;
+}
+
+@keyframes play-again-pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.025);
+        box-shadow: 0 0 0 .25rem var(--play-again-color);
+        color: var(--play-again-color);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 var(--game-text-color, 0);
+    }
+}
+
+.half-width {
+    width: 50%;
+}
+
+.summary-pulse {
+    cursor: none;
+    transition: all 0.3s ease-in-out;
+    user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+}
+
+/* while hovering, the button for 'Start Quiz' and 'Leaderboard' will highlight white, in a 'pulse' fashion */
+.summary-pulse {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.025);
+        box-shadow: 0 0 0 .25rem white;
+        color: white;
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 var(--game-text-color, 0);
     }
 }
 
 /* stops the header-box from being selected/highlighted */
 .prevent-select {
-  user-select: none; 
-  -webkit-user-select: none; 
-  -ms-user-select: none; 
+    user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
 }
 
 /* just a style choice, I thought it would fit the theme to make the cursor a question mark */
 .prevent-select:hover {
-  cursor: help
+    cursor: help
 }
 
 /* input:hover {
     cursor: text;
 } */
 
-/* This is in charge of making the <header> entry type out upon opening the page */
-.typewriter h1 {
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid var(--game-text-color); /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    animation: 
-      typing 3.5s steps(40, end),
-      blink-caret .75s step-end infinite;
-  }
-  
-  /* The typing effect */
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: var(--game-text-color); }
+.score-timer-container p {
+    /* border: var(--game-text-color) solid .25rem;
+    border-radius: .5rem;
+    border-style: ridge; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    margin: .5rem;
+    font-size: 1.25em;
+    line-height: 2em;
+}
+
+.score-container {
+    border: var(--game-text-color) solid .25rem;
+    border-style: ridge;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: .5rem;
+    padding: .5rem .5rem;
+    width: fit-content;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+input {
+    border: var(--game-text-color) solid .25rem;
+    border-style: ridge;
+    border-radius: .5rem;
+    color: white;
+    outline: none;
+    text-align: center;
+    padding: 1rem;
+    margin: .5rem 0 .5rem 0;
+}
+
+.input-color {
+    color: white;
+}
+
+/* input:hover {
+    box-shadow: 0 0 0 .25rem white;
+} */
+
+.leaderboard-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    margin: .5rem;
+    padding: .5rem;
+    font-size: 1.25em;
+    line-height: 2em;
+}
+
+.main-menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 @media screen and (max-width: 768px) {
     .text-container {
         width: 25rem;
     }
-
+    
+    .header-container {
+        width: 25rem;
+    }
     /* This allows buttons to stack  */
     .button-container {
+        display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        width: 25rem;
+        padding: .5rem 1rem;
     }
-
+    
+    button {
+        margin: .5rem 0 .5rem 0;
+        width: 100%;
+    }
+    
     .half-width {
         width: 100%;
     }
 }
-/* @media screen and (min-width) {
-    .fd-row {
-        flex-direction: column;
-    }
-} */

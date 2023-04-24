@@ -13,7 +13,7 @@
 
     <!-- Menu Page -->
             <!-- This is the box that holds the menu options(header, 'Start Quiz' and 'Leaderboard' button) -->
-            <div id="menu-page">
+            <div id="menu-page" style="display: none;">
                 <div class="page-container">
                     <!-- This container holds and places a border around the header -->
                     <header class="header-container prevent-select">
@@ -21,15 +21,15 @@
                             <h1>//What is Coding?</h1>
                         </div>
                         <div class="h1-container">
-                            <h1 class="margin-top">¯\_(ツ)_/¯</h1>
+                            <h1>¯\_(ツ)_/¯</h1>
                         </div>
                     </header>
                     <div class="text-container prevent-select">
                         <p>Do you got what it takes to complete this quiz? Let's find out just how high of a score you can acheive in under 60 seconds! </p>
                     </div>
                     <div class="button-container">
-                        <button id="start-btn" class="pulse half-width">Start Quiz</button>
-                        <button id="leaderboard-btn" class="pulse half-width">Leaderboard</button>
+                        <button id="start-btn" class="pulse">Start Quiz</button>
+                        <button id="leaderboard-btn" class="leaderboard-pulse">Leaderboard</button>
                     </div>
                 </div>
             </div>
@@ -37,12 +37,22 @@
     <!-- Quiz Page -->
             <!-- This is the box that holds the quiz parameters(questions, choices, timer, and score), and the option to quit(with the 'Quit' button) -->
             <div id="quiz-page" style="display: none;">
-                <div class="container border" >
+                <div class="page-container">
                     <!-- This container holds and places a border around the header -->
-                    <div class="container border">
-                        <header class="typewriter">
-                            <h1></h1>
-                        </header>
+                    <div class="text-container prevent-select">
+                        <div class="score-timer-container">
+                            <p class="half-width">Score: <span id="quiz-score">100%</span></p>
+                        </div>
+                        <div class="score-timer-container">
+                            <p>Time: <span>60</span>s<span></span></p>
+                        </div>
+                    </div>
+                    <div class="text-container prevent-select">
+                        <p>Do you got what it takes to complete this quiz? Let's find out just how high of a score you can acheive in under 60 seconds! </p>
+                    </div>
+                    <div class="button-container">
+                        <button id="return-menu-btn" class="quit-pulse">Quit</button>
+                        <button id="leaderboard-btn" class="leaderboard-pulse">Leaderboard</button>
                     </div>
                 </div>
             </div>
@@ -50,29 +60,56 @@
     <!-- Summary Page -->
             <!-- This is the box that holds the wrap up of your quiz results(your score), with the option to input your name into the entry to submit your score to a 'Leaderboard'(saved to local storage once submitted) -->
             <div id="summary-page" style="display: none;">
-                <div class="container border" >
-                    <!-- This container holds and places a border around the header -->
-                    <div class="container border">
-                        <header class="typewriter">
-                            <h1></h1>
-                        </header>
+                <div class="page-container">
+                    <header class="header-container summary-pulse">
+                        <div class="h1-container">
+                            <h1>Congrats!</h1>
+                        </div>
+                        <div class="h1-container">
+                            <p>You acheived a final score of:</p>
+                        </div>
+                        <div class="score-container typewriter">
+                            <h1 id="quiz-score" class="h1-container ">100%</h1>
+                        </div>
+                    </header>
+                    <div class="button-container">
+                        <form>
+                            <div class="h1-container">
+                                <p class="input-color">Please enter and sumbit your name to keep track of your high score!</p>
+                            </div>
+                            <input type="text" placeholder="'Danny DeVito'" id="name-scores">
+                            <button id="submit-btn" class="pulse">Submit</button>
+                        </form>
+                    </div>
+                    <!-- This container holds the buttons -->
+                    <div class="button-container">
+                        <button id="return-menu-btn" class="play-again-pulse">Play Again</button>
+                        <button id="leaderboard-btn" class="leaderboard-pulse">Leaderboard</button>
                     </div>
                 </div>
             </div>
 
     <!-- Leaderboard Page -->
             <!-- This is the box that holds the high scores of all the users who completed the quiz and submitted their name in the entry -->
-            <div id="leaderboard-page" style="display: none;">
-                <div class="container border" >
+            <div id="leaderboard-page">
+                <div class="page-container">
                     <!-- This container holds and places a border around the header -->
-                    <div class="container border">
-                        <header class="typewriter">
-                            <h1></h1>
-                        </header>
+                    <header class="header-container typewriter">
+                        <div class="h1-container">
+                            <h1>Leaderboard</h1>
+                        </div>
+                    </header>
+                    <div class="text-container">
+                        <p id="name-scores" class="leaderboard-container">
+                            
+                        </p>
+                    </div>
+                    <!-- This container holds the buttons -->
+                    <div class="main-menu-container">
+                        <button id="return-menu-btn" class="pulse">Main Menu</button>
                     </div>
                 </div>
             </div>
-        </div>
 
     </body>
 </html>
