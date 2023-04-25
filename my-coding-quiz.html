@@ -36,7 +36,7 @@
 
     <!-- Quiz Page -->
             <!-- This is the box that holds the quiz parameters(questions, choices, timer, and score), and the option to quit(with the 'Quit' button) -->
-            <div id="quiz-page" style="display: none;">
+            <div id="quiz-page" style="display: block;">
                 <div class="page-container">
                     <!-- This container holds and places a border around the header -->
                     <div class="text-container prevent-select">
@@ -48,7 +48,21 @@
                         </div>
                     </div>
                     <div class="text-container prevent-select">
-                        <p>Do you got what it takes to complete this quiz? Let's find out just how high of a score you can acheive in under 60 seconds! </p>
+                        <p id="question">Do you got what it takes to complete this quiz? Let's find out just how high of a score you can acheive in under 60 seconds!</p>
+                    </div>
+                    <div id="choice-container" class="text-container prevent-select">
+                        <button id="choice-a" class="button-container pulse">A
+                            <p>choice answer</p>
+                        </button>
+                        <button id="choice-b" class="button-container pulse">B
+                            <p>choice answer</p>
+                        </button>
+                        <button id="choice-c" class="button-container pulse">C
+                            <p>choice answer</p>
+                        </button>
+                        <button id="choice-d" class="button-container pulse">D
+                            <p>choice answer</p>
+                        </button>
                     </div>
                     <div class="button-container">
                         <button id="return-menu-btn" class="quit-pulse">Quit</button>
@@ -91,7 +105,7 @@
 
     <!-- Leaderboard Page -->
             <!-- This is the box that holds the high scores of all the users who completed the quiz and submitted their name in the entry -->
-            <div id="leaderboard-page">
+            <div id="leaderboard-page" style="display: none;">
                 <div class="page-container">
                     <!-- This container holds and places a border around the header -->
                     <header class="header-container typewriter">
@@ -105,8 +119,9 @@
                         </p>
                     </div>
                     <!-- This container holds the buttons -->
-                    <div class="main-menu-container">
+                    <div class="button-container">
                         <button id="return-menu-btn" class="pulse">Main Menu</button>
+                        <button id="clear-btn" class="quit-pulse">Clear Scores</button>
                     </div>
                 </div>
             </div>

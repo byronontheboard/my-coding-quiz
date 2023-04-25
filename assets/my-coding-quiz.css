@@ -361,14 +361,6 @@ input {
     line-height: 2em;
 }
 
-.main-menu-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
 @media screen and (max-width: 768px) {
     .text-container {
         width: 25rem;
