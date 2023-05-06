@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>//What is Coding? | Home</title>
+
+    <link rel="stylesheet" href="assets/redo.css">
+</head>
+
+<body class="body-container">
+
+    <main class="main-container">
+
+        <section id="quiz-page" class="section-container">
+            <!-- This is where the score and the timer will go -->
+            <div id="answer-check" class="timer-score-container line-height">
+
+                <!-- This is where the time remaining for the quiz will generate when the quiz begins -->
+                <div id="timer" class="text-container">
+                    //timer:
+                    <span id="time-left"></span>
+                </div>
+
+                <!-- This is where the score for the quiz will generate while taking the quiz -->
+                <div id="score" class="text-container">
+                    //score:
+                    <span id="score"></span>
+                </div>
+
+            </div>
+
+            <!-- This is where the choices for the quiz questions will go -->
+            <div id="question-title" class="choice-section">
+                <p class="line-height">What is the answer to this current question?</p>
+            </div>
+                
+            <div class="choice-container select-choice">
+                <p class="choice-prefix">A</p>
+                <p id="choice-a" class="choice-text" data-number="1">boop boop boop</p>
+            </div>
+            <div class="choice-container select-choice">
+                <p class="choice-prefix">B</p>
+                <p id="choice-b" class="choice-text" data-number="2"></p>
+            </div>
+            <div class="choice-container select-choice">
+                <p class="choice-prefix">C</p>
+                <p id="choice-c" class="choice-text" data-number="3"></p>
+            </div>
+            <div class="choice-container select-choice">
+                <p class="choice-prefix">D</p>
+                <p id="choice-d" class="choice-text" data-number="4"></p>
+            </div> 
+
+            <a id="return-btn" href="redo-menu.html" class="content-container select-c a-link line-height">
+                <h3>
+                    Quit
+                </h3>
+            </a>
+        </section>
+
+    </main>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    let active = document.querySelectorAll(".accordion-div .accordion.active");
+                    for (let j = 0; j < active.length; j++) {
+                        active[j].classList.remove("active");
+                        active[j].nextElementSibling.style.maxHeight = null;
+                    }
+                    this.classList.toggle("active");
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

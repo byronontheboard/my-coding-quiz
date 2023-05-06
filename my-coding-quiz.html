@@ -9,11 +9,11 @@
 </head>
     <body>
     <!-- Main container that holds every page(menu, quiz, summary, and leaderboard) -->
-        <div class="main-container">
+        <main class="main-container">
 
-    <!-- Menu Page -->
+        <!-- Menu Page -->
             <!-- This is the box that holds the menu options(header, 'Start Quiz' and 'Leaderboard' button) -->
-            <div id="menu-page" style="display: none;">
+            <div id="menu-page" style="display: block;">
                 <div class="page-container">
                     <!-- This container holds and places a border around the header -->
                     <header class="header-container prevent-select">
@@ -34,9 +34,9 @@
                 </div>
             </div>
 
-    <!-- Quiz Page -->
+        <!-- Quiz Page -->
             <!-- This is the box that holds the quiz parameters(questions, choices, timer, and score), and the option to quit(with the 'Quit' button) -->
-            <div id="quiz-page" style="display: block;">
+            <section id="quiz-page" style="display: none;">
                 <div class="page-container">
                     <!-- This container holds and places a border around the header -->
                     <div class="text-container prevent-select">
@@ -44,24 +44,24 @@
                             <p class="half-width">Score: <span id="quiz-score">100%</span></p>
                         </div>
                         <div class="score-timer-container">
-                            <p>Time: <span>60</span>s<span></span></p>
+                            <p>Time: <span id="time">60</span>s</p>
                         </div>
                     </div>
                     <div class="text-container prevent-select">
                         <p id="question">Do you got what it takes to complete this quiz? Let's find out just how high of a score you can acheive in under 60 seconds!</p>
                     </div>
                     <div id="choice-container" class="text-container prevent-select">
-                        <button id="choice-a" class="button-container pulse">A
-                            <p>choice answer</p>
+                        <button id="choice-btn" class="button-container pulse">A
+                            <p id="choice-a">choice answer</p>
                         </button>
-                        <button id="choice-b" class="button-container pulse">B
-                            <p>choice answer</p>
+                        <button id="choice-btn" class="button-container pulse">B
+                            <p id="choice-b">choice answer</p>
                         </button>
-                        <button id="choice-c" class="button-container pulse">C
-                            <p>choice answer</p>
+                        <button id="choice-btn" class="button-container pulse">C
+                            <p id="choice-c">choice answer</p>
                         </button>
-                        <button id="choice-d" class="button-container pulse">D
-                            <p>choice answer</p>
+                        <button id="choice-btn" class="button-container pulse">D
+                            <p id="choice-d">choice answer</p>
                         </button>
                     </div>
                     <div class="button-container">
@@ -69,11 +69,11 @@
                         <button id="leaderboard-btn" class="leaderboard-pulse">Leaderboard</button>
                     </div>
                 </div>
-            </div>
+            </section>
 
-    <!-- Summary Page -->
+        <!-- Summary Page -->
             <!-- This is the box that holds the wrap up of your quiz results(your score), with the option to input your name into the entry to submit your score to a 'Leaderboard'(saved to local storage once submitted) -->
-            <div id="summary-page" style="display: none;">
+            <section id="summary-page" style="display: none;">
                 <div class="page-container">
                     <header class="header-container summary-pulse">
                         <div class="h1-container">
@@ -87,7 +87,7 @@
                         </div>
                     </header>
                     <div class="button-container">
-                        <form>
+                        <form id="name-form">
                             <div class="h1-container">
                                 <p class="input-color">Please enter and sumbit your name to keep track of your high score!</p>
                             </div>
@@ -101,11 +101,11 @@
                         <button id="leaderboard-btn" class="leaderboard-pulse">Leaderboard</button>
                     </div>
                 </div>
-            </div>
+            </section>
 
-    <!-- Leaderboard Page -->
+        <!-- Leaderboard Page -->
             <!-- This is the box that holds the high scores of all the users who completed the quiz and submitted their name in the entry -->
-            <div id="leaderboard-page" style="display: none;">
+            <section id="leaderboard-page" style="display: none;">
                 <div class="page-container">
                     <!-- This container holds and places a border around the header -->
                     <header class="header-container typewriter">
@@ -114,9 +114,8 @@
                         </div>
                     </header>
                     <div class="text-container">
-                        <p id="name-scores" class="leaderboard-container">
-                            
-                        </p>
+                        <!-- This holds the score and initials that are submitted -->
+                        <p id="leaderboard-scores" class="leaderboard-container"></p>
                     </div>
                     <!-- This container holds the buttons -->
                     <div class="button-container">
@@ -124,7 +123,8 @@
                         <button id="clear-btn" class="quit-pulse">Clear Scores</button>
                     </div>
                 </div>
-            </div>
+            </section>
 
+        </main>
     </body>
 </html>

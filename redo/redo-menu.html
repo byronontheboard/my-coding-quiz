@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>//What is Coding? | Home</title>
+
+    <link rel="stylesheet" href="assets/redo.css">
+</head>
+
+<body class="body-container">
+
+    <main class="main-container">
+
+        <section id="home-page" class="section-container">
+            <div class="content-container line-height">
+                <h1>
+                    //What is Coding?
+                    <br>¯\_(ツ)_/¯
+                </h1>
+            </div>
+
+            <!-- This contains the 'Start Quiz' <a> that wil navigate to the Quiz and will start the timer function -->
+            <a id="start-btn" href="redo-quiz.html" class="content-container pulse a-link line-height">
+                <h3>
+                    Start Quiz
+                </h3>
+            </a>
+
+            <!-- This contains the 'Leaderboard' <a> that will navigate to a list of high scores generated from the Quiz on completion. -->
+            <a id="leaderboard-btn" href="[insert html for leaderboard]" class="content-container select-a a-link line-height">
+                <h3>
+                    Leaderboard
+                </h3>
+            </a>
+
+            <!-- The '.accordion' opens the below <div> with the class '.panel' and all its contents. -->
+            <div id="htp-btn" class="content-container accordion select-b line-height">
+                <h3>
+                    How to Play?
+                </h3>
+            </div>
+            <div class="panel">
+                <div class="text-container line-height">
+                    <div>
+                        <p style="color: var(--hover-select-color)">
+                            Do you got what it takes to complete this quiz? Let's find out just how high of a score you can acheive!
+                            <br>
+                            <br>Once you press 'Play' to begin, a timer shall commence simutaneously, and then you will have only 60 seconds to complete the Quiz!
+                            <br>
+                            <br>While you make your way through the Quiz, be sure to answer carefully, for if you make the mistake of answering a question wrong, you will be penalized and 5 seconds will be deducted from the timer.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    let active = document.querySelectorAll(".accordion-div .accordion.active");
+                    for (let j = 0; j < active.length; j++) {
+                        active[j].classList.remove("active");
+                        active[j].nextElementSibling.style.maxHeight = null;
+                    }
+                    this.classList.toggle("active");
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

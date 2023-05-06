@@ -1,4 +1,9 @@
 
+constructor(title,answer,choice1,choice2) {
+  this.title = title;
+  this.choices = [answer,choice1,choice2];
+  this.answer=answer;
+}
 
 var questions = [
     {
@@ -36,7 +41,7 @@ var questions = [
 ];
 
 var index;
-const timeLeft= 60;
+const timeLength = 60;
 const minus = 10;
 var secondsLeft = timeLeft;
 var quizScore;
@@ -48,4 +53,25 @@ const clearLeaderboardButton = document.getElementById("clear-highscores");
 const backButton = document.getElementById("return-menu-btn");
 
 // choice-btn = answerbutton)
-const choiceButtons = document.getElementById("choice-container")
+const choiceButtons = document.getElementById("choice-btn");
+// const choiceButtons = document.getElementById("choice-container").children;
+
+const choiceEl = Array(3);
+    for (i = 0; i < 3; i++) {
+        choiceEl[i] = document.getElementById("choice-btn" + i);
+    }
+
+const displayedPage = document.querySelectorAll("main > section")
+
+const timeLeft = document.getElementById("time"); //the span element displaying how much time is left
+const questionEl = document.getElementById("question"); //the heading with the text of the question
+// const endQuizHeading = document.getElementById("end-quiz-heading");
+// const result = document.getElementById("result"); //at the end of the quiz, the span showing how many questions were answered correctly
+const yourScore = document.getElementById("quiz-score");
+const nameForm = document.getElementById("name-form");
+const yourNameEl = document.getElementById("name-scores");
+const highscoresEl = document.getElementById("leaderboard-scores"); 
+
+function setTime () {
+    // This is the timer function. setTime is called at the start of the quiz and start counting down
+}
