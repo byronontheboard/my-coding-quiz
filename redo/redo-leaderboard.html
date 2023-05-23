@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>//What is Coding? | Home</title>
+
+    <link rel="stylesheet" href="assets/redo.css">
+</head>
+
+<body class="body-container">
+
+    <main class="main-container">
+
+        <section id="summary-page" class="section-container">
+            <div class="content-container line-height">
+                <h1>
+                    //Leaderboard
+                    <br>¯\_(ツ)_/¯
+                </h1>
+            </div>
+
+            <!-- Scores will generate inside of this <div> -->
+            <div id="leaderboard-list" style="text-align: center;">
+            </div>
+
+            <!-- This contains the 'Leaderboard' <a> that will navigate to a list of high scores generated from the Quiz on completion. -->
+            <a id="clear-btn" href="redo-leaderboard.html" class="content-container select-c a-link line-height">
+                <h3>
+                    Clear Scores
+                </h3>
+            </a>
+
+            <a id="return-btn" href="redo-menu.html" class="content-container select-choice a-link line-height">
+                <h3>
+                    Main Menu
+                </h3>
+            </a>
+            
+        </section>
+
+    </main>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    let active = document.querySelectorAll(".accordion-div .accordion.active");
+                    for (let j = 0; j < active.length; j++) {
+                        active[j].classList.remove("active");
+                        active[j].nextElementSibling.style.maxHeight = null;
+                    }
+                    this.classList.toggle("active");
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+    <script src="assets/redo-quiz.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Source+Code+Pro&display=swap');
+
+:root {
+  --screen-bgc: black;
+
+  --game-text-font: 'Press Start 2P', cursive;
+  --game-text-color: #00FF00;
+
+  --leaderboard-color: #FFFF00;
+
+  --play-again-color: #0000FF;
+
+  --quit-color: #FF0000;
+
+  --hover-select-color: white;
+  --hover-select-bgc: #010202;
+
+  --border-size: 6px;
+  --border-radius: 2rem;
+  --border-style: ridge;
+}
+
+/* ELEMENTS */
+* {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+
+body {
+    background-color: black;
+    padding: 24px;
+    height: 90vh;
+    overflow: scroll;
+    /* width: 100vw; */
+}
+
+/* header {
+    
+} */
+
+section {
+    display: flex;
+}
+
+button {
+    border: none; 
+    background:none;
+
+    margin: 12px;
+    padding: 12px;
+}
+
+p {
+    text-align: center;
+    background: none;
+}
+
+th {
+    padding: 24px !important;
+}
+
+th, td {
+    width: 50%;
+    text-align: center;
+    border: white solid 6px;
+    padding: 12px;
+}
+
+input[type=text]:focus {
+    color: green;
+    border: green solid 6px;
+}
+
+/* VISIBILITY/FX */
+.visible {
+    visibility: visible !important;
+}
+
+.hidden {
+    visibility: hidden !important;
+}
+
+.block {
+    display: block !important;
+}
+
+.none {
+    display: none !important;
+}
+
+.summary-score {
+    color: green;
+    padding: 24px;
+
+    cursor: pointer;
+    user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    
+    animation: sgp 1s infinite;
+    transition: all 0.5s ease-in-out;
+}
+
+@keyframes sgp {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 .5rem white;
+        color: white;
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 green;
+    }
+}
+
+
+.correct {
+    background: green;
+}
+
+.incorrect {
+    background: red;
+}
+
+.green:hover {
+    color: green;
+}
+
+.blue:hover {
+    color: blue;
+}
+.yellow:hover {
+    color:yellow;
+}
+
+.purple:hover {
+    color: purple;
+}
+
+.red:hover {
+    color: red;
+}
+
+.gp:hover {
+    cursor: pointer;
+    user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    
+    animation: gp 1s infinite;
+    transition: all 0.5s ease-in-out;
+}
+
+@keyframes gp {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 .5rem white;
+        color: white;
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 green;
+    }
+}
+
+.bp:hover {
+    cursor: pointer;
+    user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    
+    animation: bp 1s infinite;
+    transition: all 0.5s ease-in-out;
+}
+
+@keyframes bp {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 .5rem white;
+        color: white;
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 blue;
+    }
+}
+
+.yp:hover {
+    cursor: pointer;
+    user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    
+    animation: yp 1s infinite;
+    transition: all 0.5s ease-in-out;
+}
+
+@keyframes yp {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 .5rem white;
+        color: white;
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 yellow;
+    }
+}
+
+.pp:hover {
+    cursor: pointer;
+    user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    
+    animation: pp 1s infinite;
+    transition: all 0.5s ease-in-out;
+}
+
+@keyframes pp {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 .5rem white;
+        color: white;
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 purple;
+    }
+}
+
+.rp:hover {
+    cursor: pointer;
+    user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    
+    animation: rp 1s infinite;
+    transition: all 0.5s ease-in-out;
+}
+
+@keyframes rp {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 .5rem white;
+        color: white;
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 red;
+    }
+}
+
+.op:hover {
+    cursor: pointer;
+    user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    
+    animation: op 1s infinite;
+    transition: all 0.5s ease-in-out;
+}
+
+@keyframes op {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 .5rem white;
+        color: white;
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 orange;
+    }
+}
+
+.prevent-select {
+    user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+}
+
+/* just a style choice, I thought it would fit the theme to make the cursor a question mark */
+.prevent-select:hover {
+    cursor: help
+}
+
+.blink {
+    animation: blink 1s steps(1, end) infinite;
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+/* POSITIONING */
+.flex {
+    display: flex;
+}
+
+.justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+/* FONT/TEXT */
+.xxl-text {
+    font-size: xx-large;
+}
+
+.title-text {
+    font-size:x-large;
+    margin-top: 48px;
+}
+
+.heading-text {
+    font-size: larger;
+}
+
+.subheading-text {
+    font-size: medium;
+}
+
+.body-text {
+    font-size: small;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-48px {
+    margin-top: 48px;
+}
+
+.mb-24px {
+    margin-bottom: 24px;
+}
+
+.lh-2 {
+    line-height: 2;
+}
+
+/* CONTAINERS */
+.accordion {
+    display:flex;
+    justify-content: center;
+    align-self: center;
+    
+    height: fit-content;
+
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.panel {
+    padding: 0 1rem;
+    max-height: 0;
+    overflow: auto;
+    transition: 0.5s ease-in-out;
+}
+
+.choice-container {
+    border: white solid 6px;
+    padding: 6px 24px;
+    margin: 12px 36px;
+}
+
+.choice-container:hover {
+    cursor: pointer;
+    transition: ease-in-out .1s;
+
+    border: black solid 6px;
+}
+
+.choice-prefix, .choice-text:hover {
+    cursor: pointer;
+}
+
+.input-container {
+    background: none; 
+    color: white; 
+    outline: none;
+    
+    border: white solid 6px;
+    padding: 12px
+}
+
+@media screen and (max-width: 768px) {
+    body, table, input {
+        justify-content: center;
+        min-width: fit-content 
+    }
+}

@@ -24,6 +24,13 @@
     font-family: var(--game-text-font); 
 }
 
+button {
+    color: white; 
+    background-color: black; 
+    padding: 2rem; 
+    border: none;
+}
+
 /* sets boundaries of page and centers children containers*/
 .body-container {
     display: flex;
@@ -36,6 +43,7 @@
     
     color: var(--game-text-color);    
     background-color: var(--screen-bgc);
+    /* overflow: scroll; */
 }
 
 .main-container {
@@ -77,6 +85,23 @@
     padding: .5rem;
 
     overflow: auto;
+}
+
+.input-container {
+    text-align: center;
+    font-size: 1rem; 
+
+    margin-bottom: .5rem; 
+    padding: .5rem; 
+    
+    background-color: black; 
+    color: white; 
+    outline: none;
+
+    border:var(--game-text-color) solid 2px ;
+    border-radius: .5rem; 
+    border-style: ridge; 
+
 }
 
 .header-container {
@@ -245,6 +270,13 @@
     border: var(--game-text-color) solid var(--border-size); 
     border-radius: var(--border-radius);
     border-style: var(--border-style);
+}
+
+.leaderboard-text {
+    font-family: var(--game-text-font);
+    font-size: 1rem;
+    color: var(--game-text-color);
+    line-height: 2;
 }
 
 .correct {

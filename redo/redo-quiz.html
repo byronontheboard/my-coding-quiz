@@ -18,13 +18,13 @@
             <div id="answer-check" class="timer-score-container line-height">
 
                 <!-- This is where the time remaining for the quiz will generate when the quiz begins -->
-                <div id="timer" class="text-container">
+                <div class="text-container">
                     //timer:
-                    <span id="time-left"></span>
+                    <span id="timer"></span>
                 </div>
 
                 <!-- This is where the score for the quiz will generate while taking the quiz -->
-                <div id="score" class="text-container">
+                <div class="text-container">
                     //score:
                     <span id="score"></span>
                 </div>
@@ -32,25 +32,25 @@
             </div>
 
             <!-- This is where the choices for the quiz questions will go -->
-            <div id="question-title" class="choice-section">
-                <p class="line-height">What is the answer to this current question?</p>
+            <div class="choice-section">
+                <p id="current-question" class="line-height"></p>
             </div>
                 
             <div class="choice-container select-choice">
                 <p class="choice-prefix">A</p>
-                <p id="choice-a" class="choice-text" data-number="1">boop boop boop</p>
+                <button id="choice-a" class="choice-text"></button>
             </div>
             <div class="choice-container select-choice">
                 <p class="choice-prefix">B</p>
-                <p id="choice-b" class="choice-text" data-number="2"></p>
+                <button id="choice-b" class="choice-text"></button>
             </div>
             <div class="choice-container select-choice">
                 <p class="choice-prefix">C</p>
-                <p id="choice-c" class="choice-text" data-number="3"></p>
+                <button id="choice-c" class="choice-text"></button>
             </div>
             <div class="choice-container select-choice">
                 <p class="choice-prefix">D</p>
-                <p id="choice-d" class="choice-text" data-number="4"></p>
+                <button id="choice-d" class="choice-text"></button>
             </div> 
 
             <a id="return-btn" href="redo-menu.html" class="content-container select-c a-link line-height">
@@ -84,6 +84,7 @@
             });
         }
     </script>
+    <script src="assets/redo-quiz.js"></script>
 
 </body>
 </html>
