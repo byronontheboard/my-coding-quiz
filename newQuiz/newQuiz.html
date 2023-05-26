@@ -14,17 +14,17 @@
         <section id="hud" class="space-between row none">
             <div id="user-score" class="hud-item body-text text-center lh-2 prevent-select row">
                 <p class="hud-prefix">
-                    SCORE:
+                    SCORE: 
+                    <!-- Score will fill here. -->
+                    <span id="score" style="color:white"></span>
                 </p>
-                <!-- Score will fill here. -->
-                <p id="score">100</p>
             </div>
             <div id="user-timer" class="hud-item body-text text-center lh-2 prevent-select row">
                 <p class="hud-prefix">
                     TIMER:
+                    <!-- Timer will fill here. -->
+                    <span id="time-left" class=""></span>
                 </p>
-                <!-- Timer will fill here. -->
-                <p id="timer" class="blink">100</p>
             </div>
         </section>
         
@@ -69,36 +69,38 @@
     <main>
         <!-- Play button separate from navigation to be centered while on 'Menu'. -->
         <section class="align-center column">
-            <button id="play" onclick="displayQuiz();" class="heading-text green gp">PLAY</button>
+            <button id="play" class="heading-text green gp">PLAY</button>
         </section>
 
         <!-- Quiz Section-->
         <section id="quiz-section" class="column none">  <!-- 'hidden'/display:none class goes here -->
             <!-- Question <div> -->
             <div>
-                <!-- Questions will appear here. -->
-                <p id="question" class="question-text lh-2">QUESTION WILL GO HERE</p>
+                <!-- Questions will appear here. #questionTitle = current-question --> 
+                <p id="current-question" class="question-text lh-2"></p>
+                <!-- Answer will be determined 'CORRECT!' or 'WRONG!' -->
+                <p id="check-answer" class="none"></p>
             </div>
             <!-- Choice <div>/rename this options-list -->
             <div class="choice-container row op">
                 <!-- Choices will appear here. -->
                 <p class="choice-prefix justify-center align-center">A</p>
-                <button class="choice-text lh-2">CHOICE</button>
+                <button id="btn0" class="choice-text lh-2"></button>
             </div>
             <div class="choice-container row op">
                 <!-- Choices will appear here. -->
                 <p class="choice-prefix justify-center align-center">B</p>
-                <button class="choice-text lh-2">CHOICE</button>
+                <button id="btn1" class="choice-text lh-2"></button>
             </div>
             <div class="choice-container row op">
                 <!-- Choices will appear here. -->
                 <p class="choice-prefix justify-center align-center">C</p>
-                <button class="choice-text lh-2">CHOICE</button>
+                <button id="btn2" class="choice-text lh-2"></button>
             </div>
             <div class="choice-container row op">
                 <!-- Choices will appear here. -->
                 <p class="choice-prefix justify-center align-center">D</p>
-                <button class="choice-text lh-2">CHOICE</button>
+                <button id="btn3" class="choice-text lh-2"></button>
             </div>
         </section>
 
@@ -108,7 +110,7 @@
             <div>
                 <form action="" class="justify-center align-center column text-center lh-2">
                     <p>Please enter your name and click the 'SUBMIT' button to save your new highscore!</p>
-                    <input id="score-submission" type="text" placeholder="Danny Devito" class="input-container heading-text text-center lh-2">
+                    <input type="text" id="initial-submission" placeholder="Danny Devito" class="input-container heading-text text-center lh-2">
                 </form>
             </div>
         </section>
@@ -123,12 +125,22 @@
                         <th scope="col" class="heading-text">SCORE</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <!-- <tr> elements will generate here after each 'Submit' with the user's inputted name and score from the quiz. -->
+                <tbody id="leaderboard-list">
                     <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    
+                    <!-- <tr> elements will generate here after each 'Submit' with the user's inputted name and score from the quiz. -->
+                        
+                    <!-- <tr>
                         <td class="body-text">BYRON</td>
                         <td class="body-text">1000</td>
                     </tr>
+                    <tr id="leaderboard-list">
+                        <td></td>
+                        <td></td>
+                    </tr> -->
                 </tbody>
             </table>
         </section>
