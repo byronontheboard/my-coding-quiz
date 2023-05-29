@@ -4,25 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>//WHAT IS CODING? | QUIZ</title>
 
-    <link rel="stylesheet" href="newQuiz.css">
+    <link rel="stylesheet" href="assets/whatIsCodingStyle.css">
 </head>
-<body class="column space-between">
+<body id="everything" class="column space-between">
     <header class="column">
         <!-- Score & Timer Section -->
         <section id="hud" class="space-between row none">
+            <!-- This <div> holds the 'SCORE' for the quiz. -->
             <div id="user-score" class="hud-item body-text text-center lh-2 prevent-select row">
                 <p class="hud-prefix">
                     SCORE: 
                     <!-- Score will fill here. -->
-                    <span id="score" style="color:white"></span>
+                    <span id="score"></span>
                 </p>
             </div>
+            <!-- This <div> holds the 'TIMER' for the quiz. -->
             <div id="user-timer" class="hud-item body-text text-center lh-2 prevent-select row">
                 <p class="hud-prefix">
                     TIMER:
-                    <!-- Timer will fill here. -->
+                    <!-- Timer will appear here with a 'duration' of 60 seconds. -->
+                    <!-- Once the 'duration' is <= 10, the 'less-than-ten' and 'blink' class will be added via JavaScript(this will make the current time left flash red every second). -->
+                    <!-- After the 'duration' is = 0, the 'less-than-ten' and 'blink' class will then be removed from the class list to reset the timer to it's default appearance. -->
                     <span id="time-left" class=""></span>
                 </p>
             </div>
@@ -30,29 +34,28 @@
         
         <!-- Header & Instructions Section -->
         <section id="header" class="justify-center align-center column">
-            <div class="justify-center xxl-text text-center lh-2 mt-48px mb-24px prevent-select">//WHAT IS CODING?
-                <span class="blink">_</span>
+            <div class="justify-center xxl-text text-center lh-2 mt-48px mb-24px prevent-select">
+                <p id="title">//WHAT IS CODING?<span class="blink">_</span></p>
             </div>
             <!-- The '.accordion' opens the below <div> with the class '.panel' and all its contents. -->
             <button id="instructions" class="heading-text accordion blue bp">INSTRUCTIONS</button>
             <div class="panel">
-                <p class="lh-2">
+                <p class="lh-2 prevent-select">
                     Do you got what it takes to complete this quiz? Let's find out just how high of a score you can acheive!
                     <br>
                     <br>Once you press 'Play' to begin, a timer shall commence simutaneously, and then you will have only 60 seconds to complete the Quiz!
                     <br>
-                    <br>While you make your way through the Quiz, be sure to answer carefully, for if you make the mistake of answering a question wrong, you will be penalized and 5 seconds will be deducted from the timer.
+                    <br>While you make your way through the Quiz, be sure to answer carefully. For if you make the mistake of answering a question wrong, you will be penalized. With this hefty penalty, the player will lose <span class="incorrect">25</span> points from their score and <span class="incorrect">5</span> seconds will be deducted from the timer.
+                    <br>
+                    <br>However, if the player answers a question correctly, they will be rewarded handsomely with a whopping <span class="correct">1,000,000</span> points!
                 </p>
-                <section class="align-center column">
-                    <button id="summary-page" onclick="displaySummary();" class="heading-text yellow yp flex">SUMMARY</button>
-                </section>
             </div>
         </section>
 
         <!-- Leaderboard Section Header -->
         <section id="leaderboard-header" class="justify-center align-center column none">
-            <div class="justify-center title-text text-center lh-2 mt-48px mb-24px prevent-select">//LEADERBOARD
-                <span class="blink">_</span>
+            <div class="justify-center xxl-text text-center lh-2 mt-48px mb-24px prevent-select">
+                <p>//LEADERBOARD<span class="blink">_</span></p>
             </div>
         </section>
 
@@ -67,9 +70,9 @@
     </header> 
     
     <main>
-        <!-- Play button separate from navigation to be centered while on 'Menu'. -->
+        <!-- Play button is separate from the buttons section in order to be centered while on 'Menu'. -->
         <section class="align-center column">
-            <button id="play" class="heading-text green gp">PLAY</button>
+            <button id="play" class="xxl-text green gp">PLAY</button>
         </section>
 
         <!-- Quiz Section-->
@@ -85,32 +88,32 @@
             <div class="choice-container row op">
                 <!-- Choices will appear here. -->
                 <p class="choice-prefix justify-center align-center">A</p>
-                <button id="btn0" class="choice-text lh-2"></button>
+                <button id="btn0" class="choice-text choice lh-2"></button>
             </div>
             <div class="choice-container row op">
                 <!-- Choices will appear here. -->
                 <p class="choice-prefix justify-center align-center">B</p>
-                <button id="btn1" class="choice-text lh-2"></button>
+                <button id="btn1" class="choice-text choice lh-2"></button>
             </div>
             <div class="choice-container row op">
                 <!-- Choices will appear here. -->
                 <p class="choice-prefix justify-center align-center">C</p>
-                <button id="btn2" class="choice-text lh-2"></button>
+                <button id="btn2" class="choice-text choice lh-2"></button>
             </div>
             <div class="choice-container row op">
                 <!-- Choices will appear here. -->
                 <p class="choice-prefix justify-center align-center">D</p>
-                <button id="btn3" class="choice-text lh-2"></button>
+                <button id="btn3" class="choice-text choice lh-2"></button>
             </div>
         </section>
 
         <!-- Summary Section -->
         <section id="summary-section" class="column none">
-            <!-- Form <div> -->
+            <!-- Form <div>  for submitting the user's name/score. -->
             <div>
                 <form action="" class="justify-center align-center column text-center lh-2">
-                    <p>Please enter your name and click the 'SUBMIT' button to save your new highscore!</p>
-                    <input type="text" id="initial-submission" placeholder="Danny Devito" class="input-container heading-text text-center lh-2">
+                    <p>Please enter your name and click the 'SUBMIT' button to save your new highscore to the Leaderboard!</p>
+                    <input type="text" id="initial-submission" placeholder="'Danny Devito'" class="input-container heading-text text-center lh-2">
                 </form>
             </div>
         </section>
@@ -126,18 +129,8 @@
                     </tr>
                 </thead>
                 <tbody id="leaderboard-list">
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    
-                    <!-- <tr> elements will generate here after each 'Submit' with the user's inputted name and score from the quiz. -->
-                        
+                    <!-- <td> elements nested within a <tr> will be appended here after each 'Submit' with the user's inputted name and score from local storage.. -->
                     <!-- <tr>
-                        <td class="body-text">BYRON</td>
-                        <td class="body-text">1000</td>
-                    </tr>
-                    <tr id="leaderboard-list">
                         <td></td>
                         <td></td>
                     </tr> -->
@@ -155,7 +148,7 @@
             <button id="quit" onclick="displayMenu();" class="heading-text red rp none">QUIT</button>
         </section>
     </footer>
-    <!-- Accordion function for 'Instructions' -->
+    <!-- Accordion function for 'Instructions' that open on 'click'. -->
     <script>
         var acc = document.getElementsByClassName("accordion");
         var i;
@@ -178,6 +171,6 @@
             });
         }
     </script>
-    <script src="newQuiz.js"></script>
+    <script src="assets/whatIsCodingScript.js"></script>
 </body>
 </html>
