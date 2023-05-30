@@ -61,6 +61,6 @@ The Leaderboard page will display all of the user's past quiz scores(that were s
 -----
 
 ## Clearing Your Saved Scores
-If the user wants to wipe the slate clean, they can also click 'Clear Scores' to erase the past highscores from local storage.
+If the user wants to wipe the slate clean, they can also click 'Clear Scores' to delete all highscores from local storage.
 
 ![7 WHAT IS CODING_QUIZ(Clear)](https://github.com/byronontheboard/my-coding-quiz/assets/127366720/953769bc-3fb7-4293-bfe0-ff80012ee869)
