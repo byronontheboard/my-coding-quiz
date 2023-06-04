@@ -66,4 +66,5 @@ If the user wants to wipe the slate clean, they can also click 'Clear Scores' to
 ![7 WHAT IS CODING_QUIZ(Clear)](https://github.com/byronontheboard/my-coding-quiz/assets/127366720/953769bc-3fb7-4293-bfe0-ff80012ee869)
 
 -----
+## Deployed Application
 https://byronontheboard.github.io/my-coding-quiz/
