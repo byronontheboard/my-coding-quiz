@@ -8,20 +8,20 @@ With this appliction, I sought to truly challenge myself by familiarizing myself
 ## Acceptance Criteria  
 ### *GIVEN* I am taking a code quiz:  
 
-*WHEN* I click the start button  
-- [x] *THEN* a timer starts and I am presented with a question  
+***WHEN*** I click the start button  
+- [x] ***THEN*** a timer starts and I am presented with a question  
 
-*WHEN* I answer a question  
-- [x] *THEN* I am presented with another question  
+***WHEN*** I answer a question  
+- [x] ***THEN*** I am presented with another question  
 
-*WHEN* I answer a question incorrectly  
-- [x] *THEN* time is subtracted from the clock  
+***WHEN*** I answer a question incorrectly  
+- [x] ***THEN*** time is subtracted from the clock  
 
-*WHEN* all questions are answered or the timer reaches 0  
-- [x] *THEN* the game is over  
+***WHEN*** all questions are answered or the timer reaches 0  
+- [x] ***THEN*** the game is over  
 
-*WHEN* the game is over  
-- [x] *THEN* I can save my initials and score  
+***WHEN*** the game is over  
+- [x] ***THEN*** I can save my initials and score  
 
 -----
 
@@ -64,3 +64,6 @@ The Leaderboard page will display all of the user's past quiz scores(that were s
 If the user wants to wipe the slate clean, they can also click 'Clear Scores' to delete all highscores from local storage.
 
 ![7 WHAT IS CODING_QUIZ(Clear)](https://github.com/byronontheboard/my-coding-quiz/assets/127366720/953769bc-3fb7-4293-bfe0-ff80012ee869)
+
+-----
+https://byronontheboard.github.io/my-coding-quiz/
