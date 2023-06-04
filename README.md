@@ -1,5 +1,5 @@
 # What is Coding? | Quiz (づ╥﹏╥)づ
-With this appliction, I sought to truly challenge myself by familiarizing myself with JavaScript mechanics that would be beneficial to my learning; while also creating a fun interactive quiz that I could use to study some of the many concepts of coding! 
+With this application, I sought to truly challenge myself by familiarizing myself with JavaScript mechanics that would be beneficial to my learning; while also creating a fun interactive quiz that I could use to study some of the many concepts of coding! 
 
 <img width="1422" alt="1 WHAT IS CODING_QUIZ(MENU)" src="https://github.com/byronontheboard/my-coding-quiz/assets/127366720/45be53a7-d082-4f89-9b80-f3b7459de921">
 
